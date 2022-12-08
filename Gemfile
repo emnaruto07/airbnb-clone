@@ -4,16 +4,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 gem "rails", "~> 7.0.4"
+
+#for authentication
 gem "devise"
 
 gem "sprockets-rails"
 
+#for database
 gem "pg", "~> 1.1"
 
 gem "puma", "~> 5.0"
 
 gem "importmap-rails"
 
+#for frontend
 gem "turbo-rails"
 
 gem "stimulus-rails"
