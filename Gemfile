@@ -26,6 +26,7 @@ gem "tailwindcss-rails"
 
 gem "jbuilder"
 
+
 # gem "redis", "~> 4.0"
 
 # gem "kredis"
@@ -54,3 +55,6 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  gem 'factory_bot_rails'
+end
