@@ -25,6 +25,7 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 
 gem "jbuilder"
+gem 'sass-rails'
 
 
 # gem "redis", "~> 4.0"
