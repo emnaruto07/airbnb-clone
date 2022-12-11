@@ -2,9 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 import { enter, leave, toggle } from 'el-transition'
 
 export default class extends Controller {
-  // static targets = ['openUserMenu'];
+  static targets = ['closeButton'];
+  
   connect() {
     document.getElementById('model-wrapper').addEventListener('click', this.closeModal);
+    this.closeButtonTarget.addEventListener('click', () => {
+      leave(document.getElementById('model-wrapper'));
+      leave(document.getElementById('model-backdrop'));
+      leave(document.getElementById('model-panel'));
+    });
   }
 
   closeModal(event) {
