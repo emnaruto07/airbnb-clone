@@ -49,25 +49,56 @@
         data-transition-leave="ease-in duration-200"
         data-transition-leave-start="opacity-100 translate-y-0 sm:scale-100"
         data-transition-leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        class="hidden relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
+        class="hidden relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:max-w-xl sm:w-full sm:p-6"
       >
         <div>
-          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-            <!-- Heroicon name: outline/check -->
-            <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-          </div>
-          <div class="mt-3 text-center sm:mt-5">
-            <h3 class="text-lg font-medium leading-6 text-gray-900" id="modal-title">Payment successful</h3>
-            <div class="mt-2">
-              <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+          <div>
+            <h3 class="text-md mb-4 text-center font-semibold leading-6 text-gray-900" id="modal-title">Log in or sign up</h3>
+            <div class="relative">
+              <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                <div class="w-full border-t border-gray-300"></div>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <h4 class="text-xl leading-6 text-gray-900 mt-2 font-semibold">Welcome to Airbnb</h4>
+              <!--
+              This example requires some changes to your config:
+              
+              ```
+              // tailwind.config.js
+              module.exports = {
+                // ...
+                plugins: [
+                  // ...
+                  require('@tailwindcss/forms'),
+                ],
+              }
+              ```
+            -->
+            <div class="mt-6 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus-within:border-black focus-within:ring-1 focus-within:ring-black">
+              <label for="name" class="block text-xs font-medium text-gray-900">Email</label>
+              <input type="text" name="name" id="name" class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" placeholder="Jane.smith@gmail.com">
+            </div>
+
             </div>
           </div>
         </div>
-        <div class="mt-5 sm:mt-6">
-          <button type="button" class="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:text-sm">Go back to dashboard</button>
+        <div class="my-5 sm:my-6">
+          <button type="button" class="w-full justify-center inline-flex items-center rounded-md border border-transparent px-6 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 airbnb-pink-gradient focus:ring-offset-2">Continue</button>
         </div>
+        <div class="relative">
+          <div class="absolute inset-0 flex items-center" aria-hidden="true">
+            <div class="w-full border-t border-gray-300"></div>
+          </div>
+          <div class="relative flex justify-center">
+            <span class="bg-white px-2 text-sm text-gray-500">or</span>
+          </div>
+        </div>
+        <div class="mt-5 sm:mt-6">
+          <button type="button" class="w-full justify-center inline-flex items-center rounded-md border-2 border-solid border-gray-900 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 font-semibold">Continue with Facebook</button>
+        </div>
+
       </div>
     </div>
   </div>
