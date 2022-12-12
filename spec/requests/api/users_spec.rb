@@ -16,6 +16,8 @@ RSpec.describe "Api::Users", type: :request do
 
   	context "user not exists" do
 			it "is not found" do
+				get api_user_path(id: "junk"), headers: headers
+				expect(response.status).to eq 404
 			end
   	end
   end
