@@ -46,6 +46,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'rspec-rails', '~> 6.0.0'
   gem 'pry', '~> 0.14.1'
+  gem 'factory_bot_rails'
+  gem 'faker', '~> 3.0'
 
 end
 
@@ -58,5 +60,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_bot_rails'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'faker', '~> 3.0'
 end
