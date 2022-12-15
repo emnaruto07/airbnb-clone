@@ -6,9 +6,9 @@ class Property < ApplicationRecord
 	validates :city, presence: true
 	validates :state, presence: true
 	validates :country, presence: true
-	
+
 	geocoded_by :address
-	after_validation :geocode
+	after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
 
 	def address
 	  [state, country].compact.join(', ')
