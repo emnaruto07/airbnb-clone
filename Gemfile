@@ -26,6 +26,7 @@ gem "tailwindcss-rails"
 
 gem "jbuilder"
 gem 'sass-rails'
+gem "geocoder"
 
 
 # gem "redis", "~> 4.0"
@@ -61,5 +62,4 @@ end
 
 group :test do
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'faker', '~> 3.0'
 end
