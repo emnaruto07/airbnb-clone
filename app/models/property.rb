@@ -8,6 +8,9 @@ class Property < ApplicationRecord
 	validates :country, presence: true
 	monetize :price_cents, allow_nil: true
 
+	
+	has_many_attached :images
+
 	geocoded_by :address
 	after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
 
@@ -15,6 +18,9 @@ class Property < ApplicationRecord
 	  [state, country].compact.join(', ')
 	end
 
+	def default_image
+		images.first
+	end
 	# Property.all.each do |item|
 	# 	item.latitude = “1”
 	# 	item.longtitude = “2”
