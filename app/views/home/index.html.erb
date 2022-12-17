@@ -21,7 +21,7 @@
 		    <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><%=property.city %>, <%= property.state %>, <%= property.country %></p>
 		    <p data-distance-away class="pointer-events-none block text-sm font-medium text-gray-500"></p>
 		    <p class="pointer-events-none block text-sm font-medium text-gray-500">Jun 19 -25</p>
-		    <p class="pointer-events-none block text-sm font-medium text-gray-500">$584 per night</p>
+		    <p class="pointer-events-none block text-sm font-medium text-gray-500"><%= humanized_money_with_symbol(property.price) %> per night</p>
 		  </li>
 		<% end %>
 	</ul>

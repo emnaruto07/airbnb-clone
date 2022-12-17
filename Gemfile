@@ -16,6 +16,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 gem "importmap-rails"
+gem 'money-rails', '~>1.12'
 
 #for frontend
 gem "turbo-rails"
