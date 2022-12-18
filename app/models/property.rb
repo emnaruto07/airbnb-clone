@@ -9,7 +9,8 @@ class Property < ApplicationRecord
 	monetize :price_cents, allow_nil: true
 
 	
-	has_many_attached :images
+	has_many_attached :images, dependent: :destroy
+	has_many :reviews, as: :reviewable
 
 	geocoded_by :address
 	after_validation :geocode, if: -> { latitude.blank? && longitude.blank? }
@@ -21,9 +22,8 @@ class Property < ApplicationRecord
 	def default_image
 		images.first
 	end
-	# Property.all.each do |item|
-	# 	item.latitude = “1”
-	# 	item.longtitude = “2”
-	# 	item.save
-	# end
+	
+	def average_rating
+		reviews.average(:rating)
+	end
 end
