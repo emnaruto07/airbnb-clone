@@ -12,7 +12,7 @@ gem "sprockets-rails"
 
 #for database
 gem "pg", "~> 1.1"
-
+gem 'jsonapi-serializer'
 gem "puma", "~> 5.0"
 
 gem "importmap-rails"

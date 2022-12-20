@@ -3,7 +3,7 @@
 module Api
   class FavoritesController < ApplicationController
     protect_from_forgery with: :null_session
-    
+
     # before_action :authenticate_user!
 
     def create
@@ -11,7 +11,7 @@ module Api
 
       respond_to do |format|
         format.json do
-          render json: favorite.to_json, status: :created
+          render json: serialize_favorite(favorite), status: :created
         end
       end
     end
@@ -22,7 +22,7 @@ module Api
 
       respond_to do |format|
         format.json do
-          render json: favorite.to_json, status: 204
+          render json: serialize_favorite(favorite), status: 204
         end
       end
     end
@@ -30,6 +30,10 @@ module Api
     private
     def favorite_params
       params.permit(:user_id, :property_id)
+    end
+
+    def serialize_favorite(favorite)
+      FavoriteSerializer.new(favorite).serializable_hash[:data].to_json
     end
   end
 end
