@@ -21,54 +21,55 @@
 -->
 	<div class="bg-white">
 	  <div class="pt-6">
-	    <nav aria-label="Breadcrumb">
-	      <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-	        <li>
-	          <div class="flex items-center">
-	            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Men</a>
-	            <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-4 text-gray-300">
-	              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-	            </svg>
-	          </div>
-	        </li>
+			<div class="mx-auto max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8 mb-2">
+	    	<h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"><%= @property.name %></h1>
+			</div>
+			<div class="mx-auto max-w-2xl justify-between items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+	    	<div class="flex justify-between">
+	    		<div>
+	    			<span>
+	    			 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 inline-block relative" style="bottom: 2px;">
+						  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+						</svg>
+						<%= @property.average_rating.round(2) %> . <%= @property.reviews_count%> reviews 
+					</span>
+					|
+					<span> 
+						<%= @property.city %>, <%= @property.state %>, <%= @property.country %>
+					</span>
+	    		</div>
+	    		<div>
+	    			<%= link_to "", class: "px-4" do %>
+		    			<span>
+		    				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block">
+								  <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+								</svg>
+			    			share
+			    		</span>
+	    			<% end %>
 
-	        <li>
-	          <div class="flex items-center">
-	            <a href="#" class="mr-2 text-sm font-medium text-gray-900">Clothing</a>
-	            <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-4 text-gray-300">
-	              <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-	            </svg>
-	          </div>
-	        </li>
-
-	        <li class="text-sm">
-	          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"></a>
-	        </li>
-	      </ol>
-	    </nav>
-
+	    			<%= link_to "", class: "mr-4" do %>
+		    			<span>
+			    			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block">
+								  <path d="M9.653 16.915l-.005-.003-.019-.01a20.759 20.759 0 01-1.162-.682 22.045 22.045 0 01-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 018-2.828A4.5 4.5 0 0118 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 01-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 01-.69.001l-.002-.001z" />
+								</svg>
+								save
+							</span>
+	    			<% end %>
+	    		</div>
+	    	</div>
+	    </div>
 	    <!-- Image gallery -->
-	    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-	      <div class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
-	        <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="h-full w-full object-cover object-center">
-	      </div>
-	      <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-	        <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-	          <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
-	        </div>
-	        <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-	          <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
-	        </div>
-	      </div>
-	      <div class="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
-	        <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
-	      </div>
+	    <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:max-w-7xl lg:px-8">
+	    	<div class="aspect-auto">
+		    	<%= image_tag @property.default_image %>
+	    	</div>
 	    </div>
 
 	    <!-- Product info -->
 	    <div class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
 	      <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-	        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"><%= @property.name %></h1>
+	        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"><%= @property.headline %></h1>
 	      </div>
 
 	      <!-- Options -->
@@ -275,7 +276,7 @@
 	          <h3 class="sr-only">Description</h3>
 
 	          <div class="space-y-6">
-	            <p class="text-base text-gray-900">The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: &quot;Black&quot;. Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
+	            <p class="text-base text-gray-900"><%= @property.description %></p>
 	          </div>
 	        </div>
 
