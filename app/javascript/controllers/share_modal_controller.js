@@ -6,12 +6,4 @@ export default class extends Controller {
 		navigator.clipboard.writeText(this.element.dataset.shareUrl);
 	}
 
-	// shareWhatsApp() {
-	// }
-
-	// shareFacebook() {
-	// }
-
-	// sharetwitter() {
-	// }
 }
